@@ -17,7 +17,7 @@ const clientRoutes: Routes = [
   { path: '', redirectTo: 'acceuil-client', pathMatch: 'full' },
   { path: 'acceuil-client', component: AcceuilClientComponent },
   { path: 'bas-de-page-client', component: BasDePageClientComponent },
-  { path: 'aporpos-client', component: AproposClientComponent },
+  { path: 'apropos-client', component: AproposClientComponent },
   { path: 'menu-client', component: MenuClientComponent },
   { path: 'contact-client', component: ContactClientComponent },
   { path: 'specials-client', component: SpecialsClientComponent },
