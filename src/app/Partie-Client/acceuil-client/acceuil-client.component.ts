@@ -8,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcceuilClientComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit(): void {
+
+
+
   }
+
+
 
 }
