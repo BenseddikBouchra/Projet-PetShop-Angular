@@ -11,61 +11,59 @@
     <div class="container" data-aos="fade-up">
       <div class="row">
         <div class="col-lg-5 d-flex align-items-stretch">
-
           <div class="info">
-
             <img
-
               src="../../../assets/images/chien-category.jpg"
-              style="width: 100% ; margin-top: 5% ;"
+              style="width: 100%; margin-top: 5%"
               alt=""
             />
 
-            <h3 style="color: #e4ca47; margin-left: 43%; margin-top: 3%;" >Chien</h3>
-
-
+            <h3 style="color: #e4ca47; margin-left: 43%; margin-top: 3%">
+              Chien
+            </h3>
           </div>
-
         </div>
 
-         <div class="col-lg-7 right" style="margin-top: 2%">
+        <div class="col-lg-7 right" style="margin-top: 2%">
           <div class="email-form input-box">
             <div class="">
               <div class="section-header">
                 <h1 style="font-size: 22px">
-                 <i class="fa-solid fa-cart-shopping" style="color: #4154f1;"></i> Acheter Maintenant
+                  <i
+                    class="fa-solid fa-cart-shopping"
+                    style="color: #4154f1"
+                  ></i>
+                  Acheter Maintenant
                 </h1>
               </div>
-              <h6 style="color: #4154f1;">Catégorie : </h6>
-  <p style="font-size: 15px; ">
-              Pets
-            </p>
-<h6 style="color: #4154f1;">Description : </h6>
-  <p style="font-size: 15px; ">
-              Rencontrez nos stars du moment, les animaux les plus recherchés
-              sur notre site !
-            </p>
-<h6 style="color: #4154f1;">Prix : </h6>
-<p style="font-size: 19px; ">
-              300 MAD
-            </p>
-            <h6 style="color: #4154f1;">Quantité : </h6>
-            <p style="font-size: 19px; ">
-
-                            {{counter}}
-              <button  class="counter" (click)="quantite()"><i class="fa fa-plus"></i></button>
-<button  class="counter" (click)="quantiteminus()"><i class="fa fa-minus"></i></button>
-            </p>
+              <h6 style="color: #4154f1">Catégorie :</h6>
+              <p style="font-size: 15px">Pets</p>
+              <h6 style="color: #4154f1">Description :</h6>
+              <p style="font-size: 15px">
+                Rencontrez nos stars du moment, les animaux les plus recherchés
+                sur notre site !
+              </p>
+              <h6 style="color: #4154f1">Prix :</h6>
+              <p style="font-size: 19px">300 MAD</p>
+              <h6 style="color: #4154f1">Quantité :</h6>
+              <p style="font-size: 19px">
+                {{ counter }}
+                <button class="counter" (click)="quantite()">
+                  <i class="fa fa-plus"></i>
+                </button>
+                <button class="counter" (click)="quantiteminus()">
+                  <i class="fa fa-minus"></i>
+                </button>
+              </p>
 
               <div class="input-field">
                 <input
                   type="submit"
                   class="submit"
                   value="Ajouter au Pannier"
-                  routerLink="/chat"
+                  routerLink="/client/card-client"
                 />
               </div>
-
             </div>
           </div>
         </div>

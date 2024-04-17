@@ -12,6 +12,7 @@ import { SinscrireClientComponent } from './Partie-Client/sinscrire-client/sinsc
 import { TermesConditionsComponent } from './Partie-Client/termes-conditions/termes-conditions.component';
 import { DetailsAchatClientComponent } from './Partie-Client/details-achat-client/details-achat-client.component';
 import { ProfileClientComponent } from './Partie-Client/profile-client/profile-client.component';
+import { CardClientComponent } from './Partie-Client/card-client/card-client.component';
 
 
 
@@ -27,7 +28,8 @@ const clientRoutes: Routes = [
   { path: 'sidentifier-client', component: SidentifierClientComponent },
   { path: 'sinscrire-client', component: SinscrireClientComponent },
   { path: 'details-achat-client', component: DetailsAchatClientComponent },
-  {path:'profile-client', component:ProfileClientComponent}
+  { path: 'profile-client', component: ProfileClientComponent },
+  { path: 'card-client',component:CardClientComponent},
 ];
 
 const routes: Routes = [
