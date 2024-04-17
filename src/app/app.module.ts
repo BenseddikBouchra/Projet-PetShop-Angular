@@ -13,6 +13,8 @@ import { SpecialsClientComponent } from './Partie-Client/specials-client/special
 import { SinscrireClientComponent } from './Partie-Client/sinscrire-client/sinscrire-client.component';
 import { SidentifierClientComponent } from './Partie-Client/sidentifier-client/sidentifier-client.component';
 import { TermesConditionsComponent } from './Partie-Client/termes-conditions/termes-conditions.component';
+import { DetailsAchatClientComponent } from './Partie-Client/details-achat-client/details-achat-client.component';
+import { ProfileClientComponent } from './Partie-Client/profile-client/profile-client.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { TermesConditionsComponent } from './Partie-Client/termes-conditions/ter
     SpecialsClientComponent,
     SinscrireClientComponent,
     SidentifierClientComponent,
-    TermesConditionsComponent
+    TermesConditionsComponent,
+    DetailsAchatClientComponent,
+    ProfileClientComponent
   ],
   imports: [
     BrowserModule,

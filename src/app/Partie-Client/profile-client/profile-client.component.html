@@ -1,0 +1,158 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+/>
+<body>
+  <section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+      <div class="row">
+        <div class="col-lg-6 right" style="margin-top: 2%">
+          <div class="email-form input-box">
+            <div class="">
+              <div class="section-header">
+                <h1 style="font-size: 22px">
+                  <i class="fa fa-user"></i> Informations Personnelle
+                </h1>
+              </div>
+              <div class="card-body">
+                <div id="form">
+                  <div style="display: flex">
+                    <div
+                      class="input-field"
+                      style="display: inline-block; margin-right: 10px"
+                    >
+
+                      <input type="text" class="input" id="nom" required="" value="nom"/>
+                      <label for="">nom</label>
+                    </div>
+                    <div
+                      class="input-field"
+                      style="display: inline-block; margin-right: 10px"
+                    >
+
+                      <input type="text" class="input" id="nom" required="" value="email"/>
+                      <label for="">email</label>
+                    </div>
+                  </div>
+                  <div class="input-field">
+                    <input
+                      type="tel"
+                      class="input"
+                      id="tel"
+                      required=""
+                     value="Telephone"
+                    />
+
+                    <label for="pass">Telephone</label>
+                  </div>
+                  <div class="input-field">
+                    <input
+                      type="text"
+                      class="input"
+                      id="entreprise"
+                      required=""
+                      name="entreprise"
+                      value="entreprise"
+                    />
+                    <label for="pass">Entreprise</label>
+                  </div>
+                  <div class="input-field">
+                    <textarea
+                      class="input"
+                      id="message"
+                      required=""
+                      name="message"
+                      placeholder="Adresse.."
+                    ></textarea>
+                  </div>
+                  <div class="input-field">
+                    <input
+                      type="password"
+                      class="input"
+                      id="pass"
+                      required=""
+                      name="password"
+                      value="motdepasse"
+                    />
+                    <label for="pass">Mot de passe</label>
+                  </div>
+                </div>
+                <!--dyl form-->
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 d-flex align-items-stretch">
+          <div class="info input-box">
+            <div class="card-body">
+              <div id="form">
+               <div class="input-field">
+                    <input
+                      type="text"
+                      class="input"
+                      id="entreprise"
+                      required=""
+                      name="entreprise"
+                      value="entreprise"
+                    />
+                    <label for="pass">numéro de la carte</label>
+                  </div>
+                <label for="" style="margin-left: 10px; margin-top: 10px"
+                  >Date d'expiration :</label
+                >
+
+                <div style="display: flex">
+                  <div
+                    class="input-field"
+                    style="display: inline-block; margin-right: 10px ;width: 50%;"
+                  >
+                    <select id="mois" class="input" required="">
+                      <option value="" disabled selected>Mois</option>
+                      <option value="janvier">Janvier</option>
+                      <option value="février">Février</option>
+                      <option value="mars">Mars</option>
+                      <!-- Add more options for other months as needed -->
+                    </select>
+                  </div>
+
+                  <div class="input-field" style="display: inline-block;width: 50%;">
+                    <select id="mois" class="input" required="">
+                      <option value="" disabled selected>Année</option>
+                      <option value="janvier">2024</option>
+                      <option value="février">2025</option>
+                      <option value="mars">2027</option>
+                      <option value="mars">2028</option>
+                      <option value="mars">2029</option>
+                      <option value="mars">2030</option>
+                      <option value="mars">2031</option>
+                    </select>
+                  </div>
+                </div>
+                <br>
+                <div class="input-field">
+                    <input
+                      type="text"
+                      class="input"
+                      id="entreprise"
+                      required=""
+                      name="entreprise"
+                      value="CVC"
+                    />
+                    <label for="pass">CVC</label>
+                  </div>
+                <br />
+                <div class="input-field">
+                  <input type="submit" class="submit" value="Modifier" />
+                </div>
+
+
+              </div>
+              <!--dyl form-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
