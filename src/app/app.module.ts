@@ -15,6 +15,7 @@ import { SidentifierClientComponent } from './Partie-Client/sidentifier-client/s
 import { TermesConditionsComponent } from './Partie-Client/termes-conditions/termes-conditions.component';
 import { DetailsAchatClientComponent } from './Partie-Client/details-achat-client/details-achat-client.component';
 import { ProfileClientComponent } from './Partie-Client/profile-client/profile-client.component';
+import { CardClientComponent } from './Partie-Client/card-client/card-client.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProfileClientComponent } from './Partie-Client/profile-client/profile-c
     SidentifierClientComponent,
     TermesConditionsComponent,
     DetailsAchatClientComponent,
-    ProfileClientComponent
+    ProfileClientComponent,
+    CardClientComponent
   ],
   imports: [
     BrowserModule,
