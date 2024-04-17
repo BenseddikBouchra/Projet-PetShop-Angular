@@ -178,19 +178,30 @@ section {
 
 .useruser {
 
-    background: #65baba;
+    background: #358cff;
     margin-left: 10px;
     border-radius: 50px;
     padding: 8px 13px;
     color: white;
 }
 
+
 .useruser:hover {
 
-    background: #549f9f;
-    color: rgb(48, 38, 36);
+    background: #4a99ff;
+    color: rgb(250, 250, 250);
 }
-
+.cardcard{
+    background: #53c263;
+        margin-left: 4px;
+        border-radius: 50px;
+        padding: 8px 13px;
+        color: white;
+}
+.cardcard:hover {
+    background: #75df85;
+    color: white;
+}
 .navbar .dropdown ul {
     display: block;
     position: absolute;
