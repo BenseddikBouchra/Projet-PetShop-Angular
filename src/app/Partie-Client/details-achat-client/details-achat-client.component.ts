@@ -18,15 +18,10 @@ export class DetailsAchatClientComponent implements OnInit {
 
       this.valeur = this.counter;
     }
-      else {
-      this.counter--;
-            this.valeur = this.counter;
 
-
-    }
   }
   quantiteminus() {
-    if (this.counter >0) {
+    if (this.counter >1) {
       this.counter--;
       this.valeur = this.counter;
     }
