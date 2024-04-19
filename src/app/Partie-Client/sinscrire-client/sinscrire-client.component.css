@@ -6,6 +6,10 @@ body {
 
 }
 
+.contact{
+    margin-top: 4%;
+}
+
 .contact .info {
     background: linear-gradient(to right, rgb(97, 144, 247), rgba(255, 145, 0, 0.79));
     border-top: 40px solid #4779e4;
