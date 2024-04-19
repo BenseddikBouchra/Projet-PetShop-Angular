@@ -5,6 +5,10 @@ body{
     margin-right: 6%;
     margin-bottom: 4%;
 }
+.about{
+    margin-top: 4%;
+}
+
 .about h3 {
     font-weight: 700;
     font-size: 28px;
