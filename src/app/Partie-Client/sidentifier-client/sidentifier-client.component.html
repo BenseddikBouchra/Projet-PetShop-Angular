@@ -26,7 +26,7 @@
               </div>
 
               <div class="input-field">
-                <input type="text" class="input" id="email" required="" />
+                <input type="text" class="input" id="email" required="" [(ngModel)]="Infos.email"/>
                 <label for="email">Email</label>
               </div>
               <div class="input-field" id="password1">
@@ -35,7 +35,7 @@
                   class="input"
                   id="pass"
                   required=""
-                  name="password"
+                  [(ngModel)]="Infos.pass"
                 />
                 <label for="pass">Mot de passe</label>
               </div>
@@ -45,6 +45,7 @@
                   class="submit"
                   value=" Connecter"
                   routerLink="/chat"
+                  (click)="connecter()"
                 />
               </div>
               <div class="signin">

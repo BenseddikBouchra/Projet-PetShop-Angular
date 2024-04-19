@@ -21,26 +21,27 @@
                       class="input-field"
                       style="display: inline-block; margin-right: 10px"
                     >
-                      <input type="text" class="input" id="nom" required="" />
+                      <input type="text" class="input" id="nom" required="" [(ngModel)]="Infos.nom" />
                       <label for="nomcomplet">Nom Complet </label>
                     </div>
-                    <div class="input-field" style="display: inline-block">
-                      <input
-                        type="email"
-                        class="input"
-                        id="email"
-                        required=""
-                      />
-                      <label for="prenom">Email </label>
-                    </div>
-                  </div>
-                  <div class="input-field">
+                 <div class="input-field">
                     <input
-                      type="tel"
+                      type="text"
                       class="input"
                       id="tel"
                       required=""
-                      name="tel"
+                      [(ngModel)]="Infos.email"
+                    />
+                    <label for="pass">Email</label>
+                  </div>
+                  </div>
+                  <div class="input-field">
+                    <input
+                      type="number"
+                      class="input"
+                      id="tel"
+                      required=""
+                      [(ngModel)]="Infos.phone"
                     />
                     <label for="pass">Telephone</label>
                   </div>
@@ -50,7 +51,7 @@
                       class="input"
                       id="entreprise"
                       required=""
-                      name="entreprise"
+                      [(ngModel)]="Infos.entreprise"
                     />
                     <label for="pass">Entreprise</label>
                   </div>
@@ -59,8 +60,8 @@
                       class="input"
                       id="message"
                       required=""
-                      name="message"
                       placeholder="Adresse.."
+                      [(ngModel)]="Infos.adresse"
                     ></textarea>
                   </div>
                   <div class="input-field">
@@ -69,7 +70,7 @@
                       class="input"
                       id="pass"
                       required=""
-                      name="password"
+                      [(ngModel)]="Infos.password"
                     />
                     <label for="pass">Mot de passe</label>
                   </div>
@@ -89,7 +90,8 @@
                     class="input"
                     id="usercard"
                     required=""
-                    name="usercard"
+
+                    [(ngModel)]="Infos.numCarte"
                   />
                   <label for="usercard"> Numero de carte de paiement</label>
                 </div>
@@ -102,7 +104,7 @@
                     class="input-field"
                     style="display: inline-block; margin-right: 10px ;width: 50%;"
                   >
-                    <select id="mois" class="input" required="">
+                    <select id="mois" class="input" required="" [(ngModel)]="Infos.moisCarte">
                       <option value="" disabled selected>Mois</option>
                       <option value="janvier">Janvier</option>
                       <option value="février">Février</option>
@@ -112,7 +114,7 @@
                   </div>
 
                   <div class="input-field" style="display: inline-block;width: 50%;">
-                    <select id="mois" class="input" required="">
+                    <select id="mois" class="input" required="" [(ngModel)]="Infos.anneeCarte">
                       <option value="" disabled selected>Année</option>
                       <option value="janvier">2024</option>
                       <option value="février">2025</option>
@@ -131,12 +133,13 @@
                     id="cvc"
                     required=""
                     name="cvc"
+                    [(ngModel)]="Infos.cvc"
                   />
                   <label for="cvc">CVC</label>
                 </div>
                 <br />
                 <div class="input-field">
-                  <input type="submit" class="submit" value=" S'inscrire" />
+                  <input type="submit" class="submit" value=" S'inscrire" (click)="inscrire()"/>
                 </div>
 
                 <div class="signin">
