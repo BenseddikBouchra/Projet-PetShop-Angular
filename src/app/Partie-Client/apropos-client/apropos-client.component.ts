@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PetsService } from 'src/app/Services/pets.service';
 
 @Component({
   selector: 'app-apropos-client',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AproposClientComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pets_service:  PetsService) { }
 
   ngOnInit(): void {
+
+    this.pets_service.pets().subscribe(
+      (response) => {
+        console.log("reponse", response)
+      },
+      (error) => {
+        console.log("error", error)
+      }
+    )
   }
+  
 
 }

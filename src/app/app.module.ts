@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AcceuilClientComponent } from './Partie-Client/acceuil-client/acceuil-client.component';
@@ -17,6 +16,7 @@ import { TermesConditionsComponent } from './Partie-Client/termes-conditions/ter
 import { DetailsAchatClientComponent } from './Partie-Client/details-achat-client/details-achat-client.component';
 import { ProfileClientComponent } from './Partie-Client/profile-client/profile-client.component';
 import { CardClientComponent } from './Partie-Client/card-client/card-client.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { CardClientComponent } from './Partie-Client/card-client/card-client.com
     ProfileClientComponent,
     CardClientComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
