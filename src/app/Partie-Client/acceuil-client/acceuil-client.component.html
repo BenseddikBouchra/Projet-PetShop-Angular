@@ -263,230 +263,126 @@
         data-aos="fade-up"
         data-aos-delay="200"
       >
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div
+          class="col-lg-4 col-md-6 portfolio-item filter-app"
+          *ngFor="let chats of latestChats"
+          style="margin-bottom: 2%"
+        >
           <div class="portfolio-wrap">
             <span id="new"><span id="spn">New</span></span>
             <img
-              src="../../../assets/images/chat2-new.jpg"
+              [src]="'../../../assets/images/' + chats.imagePet"
               class="img-fluid"
               alt=""
             />
             <div class="portfolio-info">
-              <h4>Chat</h4>
-              <p>pets</p>
+              <h4>{{ chats.categorie.nomCategorie }}</h4>
+              <p>{{ chats.nomPet }}</p>
+              <br />
+              <p>{{ chats.descriptionPet }}</p>
+
               <div class="portfolio-links">
                 <a
-                  data-gallery="portfolioGallery"
-                  class="portfokio-lightbox"
-                  title="Détails"
-                  ><i class="fa fa-plus"></i
-                ></a>
-                <a title="Catégories"><i class="fa fa-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <span id="new"><span id="spn">New</span></span>
-
-            <img
-              src="../../../assets/images/chat3-new.jpg"
-              class="img-fluid"
-              alt=""
-              style="margin-bottom: 10%"
-            />
-            <div class="portfolio-info">
-              <h4>Chat</h4>
-              <p>pets</p>
-              <div class="portfolio-links">
-                <a
+                  style="cursor: pointer"
+                  (click)="
+                    achter(chats.idPet.toString(), chats.categorie.nomCategorie)
+                  "
                   data-gallery="portfolioGallery"
                   class="portfokio-lightbox"
                   title="Acheter"
-                  ><i class="fa fa-plus"></i
+                  ><i class="fa-solid fa-cart-shopping"></i
                 ></a>
-                <a title="Details"><i class="fa fa-link"></i></a>
+                <a
+                  style="cursor: pointer"
+                  title="Catégories"
+                  routerLink="/client/categories-client"
+                  ><i class="fa fa-link"></i
+                ></a>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div
+          class="col-lg-4 col-md-6 portfolio-item filter-app"
+          *ngFor="let chiens of latestChiens"
+          style="margin-bottom: 2%"
+        >
           <div class="portfolio-wrap">
             <span id="new"><span id="spn">New</span></span>
-
             <img
-              src="../../../assets/images/chat3-new.jpg"
+              [src]="'../../../assets/images/' + chiens.imagePet"
               class="img-fluid"
               alt=""
             />
             <div class="portfolio-info">
-              <h4>Chat</h4>
-              <p>pets</p>
+              <h4>{{ chiens.categorie.nomCategorie }}</h4>
+              <p>{{ chiens.nomPet }}</p>
+              <br />
+              <p>{{ chiens.descriptionPet }}</p>
+
               <div class="portfolio-links">
                 <a
+                  style="cursor: pointer"
+                  (click)="
+                    achter(
+                      chiens.idPet.toString(),
+                      chiens.categorie.nomCategorie
+                    )
+                  "
                   data-gallery="portfolioGallery"
                   class="portfokio-lightbox"
                   title="Acheter"
-                  ><i class="fa fa-plus"></i
+                  ><i class="fa-solid fa-cart-shopping"></i
                 ></a>
-                <a title="Details"><i class="fa fa-link"></i></a>
+                <a
+                  style="cursor: pointer"
+                  title="Catégories"
+                  routerLink="/client/categories-client"
+                  ><i class="fa fa-link"></i
+                ></a>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+        <div
+          class="col-lg-4 col-md-6 portfolio-item filter-app"
+          *ngFor="let prodcuts of lastetProduct"
+          style="margin-bottom: 2%"
+        >
           <div class="portfolio-wrap">
             <span id="new"><span id="spn">New</span></span>
-
             <img
-              src="../../../assets/images/chien1-new.jpg"
+              [src]="'../../../assets/images/' + prodcuts.imageProduit"
               class="img-fluid"
               alt=""
-              style="margin-bottom: 10%"
             />
             <div class="portfolio-info">
-              <h4>Chien</h4>
-              <p>pets</p>
+              <h4>{{ prodcuts.categorie.nomCategorie }}</h4>
+              <p>{{ prodcuts.nomProduit }}</p>
+              <br />
+              <p>{{ prodcuts.descriptionProduit }}</p>
+
               <div class="portfolio-links">
                 <a
+                  style="cursor: pointer"
+                  (click)="
+                    achter(
+                      prodcuts.idProduit.toString(),
+                      prodcuts.categorie.nomCategorie
+                    )
+                  "
                   data-gallery="portfolioGallery"
                   class="portfokio-lightbox"
                   title="Acheter"
-                  ><i class="fa fa-plus"></i
+                  ><i class="fa-solid fa-cart-shopping"></i
                 ></a>
-                <a title="Details"><i class="fa fa-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <span id="new"><span id="spn">New</span></span>
-
-            <img
-              src="../../../assets/images/chien2-new.jpg"
-              class="img-fluid"
-              alt=""
-            />
-            <div class="portfolio-info">
-              <h4>chien</h4>
-              <p>pets</p>
-              <div class="portfolio-links">
                 <a
-                  data-gallery="portfolioGallery"
-                  class="portfokio-lightbox"
-                  title="Web 2"
-                  ><i class="bi bi-plus"></i
+                  style="cursor: pointer"
+                  title="Catégories"
+                  routerLink="/client/categories-client"
+                  ><i class="fa fa-link"></i
                 ></a>
-                <a title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <span id="new"><span id="spn">New</span></span>
-
-            <img
-              src="../../../assets/images/chien2-new.jpg"
-              class="img-fluid"
-              alt=""
-            />
-            <div class="portfolio-info">
-              <h4>Chien</h4>
-              <p>Pets</p>
-              <div class="portfolio-links">
-                <a
-                  href="assets/img/portfolio/portfolio-6.jpg"
-                  data-gallery="portfolioGallery"
-                  class="portfokio-lightbox"
-                  title="App 3"
-                  ><i class="bi bi-plus"></i
-                ></a>
-                <a href="portfolio-details.html" title="More Details"
-                  ><i class="bi bi-link"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <span id="new"><span id="spn">New</span></span>
-
-            <img
-              src="../../../assets/images/acc1-new.jpg"
-              class="img-fluid"
-              alt=""
-            />
-            <div class="portfolio-info">
-              <h4>Cage</h4>
-              <p>accessoire</p>
-              <div class="portfolio-links">
-                <a
-                  data-gallery="portfolioGallery"
-                  class="portfokio-lightbox"
-                  title="Acheter"
-                  ><i class="fa fa-plus"></i
-                ></a>
-                <a title="Details"><i class="fa fa-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <span id="new"><span id="spn">New</span></span>
-
-            <img
-              src="../../../assets/images/acc2-new.jpg"
-              class="img-fluid"
-              alt=""
-            />
-            <div class="portfolio-info">
-              <h4>Nourriture</h4>
-              <p>Accessoire</p>
-              <div class="portfolio-links">
-                <a
-                  data-gallery="portfolioGallery"
-                  class="portfokio-lightbox"
-                  title="Card 3"
-                  ><i class="bi bi-plus"></i
-                ></a>
-                <a title="More Details"><i class="bi bi-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <span id="new"><span id="spn">New</span></span>
-
-            <img
-              src="../../../assets/images/acc2-new.jpg"
-              class="img-fluid"
-              alt=""
-            />
-            <div class="portfolio-info">
-              <h4>Collier</h4>
-              <p>Accessoire</p>
-              <div class="portfolio-links">
-                <a
-                  data-gallery="portfolioGallery"
-                  class="portfokio-lightbox"
-                  title="Web 3"
-                  ><i class="bi bi-plus"></i
-                ></a>
-                <a title="More Details"><i class="bi bi-link"></i></a>
               </div>
             </div>
           </div>
@@ -504,7 +400,9 @@
           <div class="count-box">
             <i class="fa-regular fa-face-smile-beam"></i>
             <div>
-              <span class="purecounter">235</span>
+              <span class="purecounter" *ngIf="countUsers !== undefined">{{
+                countUsers
+              }}</span>
               <p>Happy Clients</p>
             </div>
           </div>
@@ -514,7 +412,9 @@
           <div class="count-box">
             <i class="fa-solid fa-cat" style="color: #ffd43b"></i>
             <div #counter>
-              <span class="purecounter">400</span>
+              <span class="purecounter" *ngIf="countCats !== undefined">{{
+                countCats
+              }}</span>
               <p>Chats</p>
             </div>
           </div>
@@ -524,7 +424,9 @@
           <div class="count-box">
             <i class="fa-solid fa-dog" style="color: #b197fc"></i>
             <div>
-              <span class="purecounter">150</span>
+              <span class="purecounter" *ngIf="countDogs !== undefined">{{
+                countDogs
+              }}</span>
               <p>Chiens</p>
             </div>
           </div>
@@ -534,8 +436,10 @@
           <div class="count-box">
             <i class="fa-solid fa-cart-shopping" style="color: #63e6be"></i>
             <div>
-              <span class="purecounter">210</span>
-              <p>Accessoires</p>
+              <span class="purecounter" *ngIf="countProducts !== undefined">{{
+                countProducts
+              }}</span>
+              <p>Produits</p>
             </div>
           </div>
         </div>
@@ -554,85 +458,83 @@
       </header>
 
       <div class="row gy-4" data-aos="fade-left">
-        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+        <div
+          class="col-lg-4 col-md-6"
+          data-aos="zoom-in"
+          data-aos-delay="100"
+          *ngIf="mostPopularChien"
+        >
           <div class="box">
-            <h3 style="color: #07d5c0">Chien</h3>
-            <div class="price"><sup>MAD</sup>120</div>
+            <h3 style="color: #07d5c0">{{ mostPopularChien.categorie }}</h3>
+            <div class="price">{{ mostPopularChien.name }}</div>
             <img
-              src="../../../assets/images/chien-category.jpg"
+              [src]="'../../../assets/images/' + mostPopularChien.imageUrl"
               class="img-fluid"
               alt=""
             />
             <p>
-              Rencontrez nos stars du moment, les animaux les plus recherchés
-              sur notre site !
+              {{ mostPopularChien.description }}
             </p>
-            <a routerLink="/client/details-achat-client" class="btn-buy"
+            <a
+              (click)="achter(mostPopularChien.id, mostPopularChien.categorie)"
+              class="btn-buy"
               >Acheter
               <i class="fa-solid fa-cart-shopping" style="color: #6381e6dd"></i
             ></a>
           </div>
         </div>
 
-        <!--  <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+        <div
+          class="col-lg-4 col-md-6"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+          *ngIf="mostPopularChat"
+        >
           <div class="box">
-            <span class="featured">Promotion</span>
-            <h3 style="color: #65c600">Chien</h3>
-            <div class="price"><sup>MAD</sup>200</div>
+            <h3 style="color: #ff901c">{{ mostPopularChat.categorie }}</h3>
+            <div class="price">{{ mostPopularChat.name }}</div>
             <img
-              src="../../../assets/images/chien-category.jpg"
-              class="img-fluid"
-              alt=""
-            />
-            <p>
-              Rencontrez nos stars du moment, les animaux les plus recherchés
-              sur notre site !
-            </p>
-            <a class="btn-buy"
-              >Acheter
-              <i class="fa-solid fa-cart-shopping" style="color: #6381e6dd"></i
-            ></a>
-          </div>
-        </div>
- -->
-        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300" *ngIf="mostPopularChat">
-          <div class="box" >
-            <h3 style="color: #ff901c">{{mostPopularChat.categorie}}</h3>
-            <div class="price">{{mostPopularChat.name}}</div>
-            <img
-              [src]="
-                '../../../assets/images/chat-category.jpg' +
-                mostPopularChat.imageUrl
-              "
+              [src]="'../../../assets/images/' + mostPopularChat.imageUrl"
               class="img-fluid"
               alt=""
               style="width: 73%"
             />
             <p>
-              {{mostPopularChat.description }}
+              {{ mostPopularChat.description }}
             </p>
-            <a class="btn-buy"
+            <a
+              class="btn-buy"
+              (click)="achter(mostPopularChat.id, mostPopularChat.categorie)"
               >Acheter
               <i class="fa-solid fa-cart-shopping" style="color: #6381e6dd"></i
             ></a>
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+        <div
+          class="col-lg-4 col-md-6"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+          *ngIf="mostPopularProduct"
+        >
           <div class="box">
-            <h3 style="color: #ff0071">Accessoire</h3>
-            <div class="price"><sup>MAD</sup>320</div>
+            <h3 style="color: #ff0071">{{ mostPopularProduct.category }}</h3>
+            <div class="price">{{ mostPopularProduct.name }}</div>
             <img
-              src="../../../assets/images/accessoire-category.jpg"
+              [src]="'../../../assets/images/' + mostPopularProduct.imageUrl"
               class="img-fluid"
               alt=""
             />
             <p>
-              Rencontrez nos stars du moment, les animaux les plus recherchés
-              sur notre site !
+              {{ mostPopularProduct.description }}
             </p>
-            <a class="btn-buy"
-              >Acheter
+            <a
+              class="btn-buy"
+              (click)="
+                achter(mostPopularProduct.id, mostPopularProduct.category)
+              "
+            >
+              Acheter
               <i class="fa-solid fa-cart-shopping" style="color: #6381e6dd"></i
             ></a>
           </div>

@@ -177,9 +177,9 @@ section {
 .pricing .special {
   width: 200px;
   position: absolute;
-  top: 18px;
+    bottom: 18px;
   right: -68px;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
   z-index: 1;
   font-size: 14px;
   padding: 1px 0 3px 0;
@@ -189,9 +189,9 @@ section {
 .pricing .promotion {
   width: 200px;
   position: absolute;
-  top: 18px;
-  right: -68px;
-  transform: rotate(45deg);
+  top: 24px;
+  right: 100px;
+  transform: rotate(-45deg);
   z-index: 1;
   font-size: 14px;
   padding: 1px 0 3px 0;
