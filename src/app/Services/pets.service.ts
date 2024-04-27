@@ -10,7 +10,7 @@ export class PetsService {
 
   mostPopularChat(): Observable<pets> {
     return this.http.get<pets>(
-      'localhost:8080/Petshop/api/achatpet/most-popular-pet-chat'
+      'http://localhost:8080/Petshop/api/achatpet/most-popular-pet-chat'
     );
   }
 
