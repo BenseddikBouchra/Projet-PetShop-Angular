@@ -12,15 +12,8 @@ export class AproposClientComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.pets_service.pets().subscribe(
-      (response) => {
-        console.log("reponse", response)
-      },
-      (error) => {
-        console.log("error", error)
-      }
-    )
+    
   }
-  
+
 
 }
