@@ -1,4 +1,4 @@
-export interface latestPet {
+export interface specialPetBean {
   idPet: number;
   nomPet: string;
   descriptionPet: string;

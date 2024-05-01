@@ -27,7 +27,7 @@ const clientRoutes: Routes = [
   { path: 'categories-client', component: CategoriesClientComponent },
   { path: 'sidentifier-client', component: SidentifierClientComponent },
   { path: 'sinscrire-client', component: SinscrireClientComponent },
-  { path: 'details-achat-client', component: DetailsAchatClientComponent },
+  { path: 'details-achat-client/:idPetOrProduct/:categorie', component: DetailsAchatClientComponent },
   { path: 'profile-client', component: ProfileClientComponent },
   { path: 'card-client',component:CardClientComponent},
 ];

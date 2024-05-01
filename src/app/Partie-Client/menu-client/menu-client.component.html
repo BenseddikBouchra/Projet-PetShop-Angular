@@ -43,10 +43,16 @@
             </button>
           </li>
           <li>
-                <button type="button" class="btn cardcard" routerLink="/client/sidentifier-client">
+            <button type="button" class="btn cardcard" (click)="goToCard()">
             <i class="fa fa-cart-shopping"></i>
             </button>
           </li>
+          <li *ngIf="serviceUser.userAuthObject!=null">
+            <button type="button" class="btn cardcard" (click)="logout()">
+              <i class="fa fa-sign-out"></i> <!-- Utilisation de l'icône de déconnexion de FontAwesome -->
+            </button>
+          </li>
+          
         </ul>
         <i class="fa fa-list mobile-nav-toggle " id="toggleButton"></i>
       

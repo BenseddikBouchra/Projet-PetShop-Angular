@@ -1,4 +1,4 @@
-export interface specialpet {
+export interface lastePetBean {
   idPet: number;
   nomPet: string;
   descriptionPet: string;
