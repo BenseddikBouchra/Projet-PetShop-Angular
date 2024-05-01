@@ -22,40 +22,36 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+
+                  <tr *ngFor="let item of cart">
                     <td>
-                      <img src="../../../assets/images/chat1-new.jpg" style="max-width: 112px;" class="img-fluid rounded-circle" alt="Product Photo">
+                      <img [src]="'../../../assets/images/' + (item.detailsMapCart.imagePathProduit || item.detailsMapCart.imagePathPet)" style="max-width: 112px;" class="img-fluid rounded-circle" alt="Photo">
                     </td>
-                    <td>Roky</td>
-                    <td>$109.00</td>
-                    <td>2</td>
-                    <td>$222.00</td>
                     <td>
-                      <button class="btn btn-danger rounded-circle">
+                      {{ item.detailsMapCart.nomProduit || item.detailsMapCart.nomPet }}
+                    </td>
+                    <td>
+                      ${{ item.detailsMapCart.prixProduit || item.detailsMapCart.prixPet }}
+                    </td>
+                    <td>
+                      {{ item.detailsMapCart.quantiteProduit || item.detailsMapCart.quantitePet }}
+                    </td>
+                    <td>
+                      ${{ item.detailsMapCart.sousPrixProduit || item.detailsMapCart.sousPrixPet }}
+                    </td>
+                    <td>
+                      <button (click)="supprimer(item)" class="btn btn-danger rounded-circle">
                         <i class="fas fa-trash-alt"></i>
                       </button>
                     </td>
                   </tr>
-                  <tr>
-                    <td>
-                      <img src="../../../assets/images/chien3-new.jpg" style="max-width: 112px;" class="img-fluid rounded-circle" alt="Product Photo">
-                    </td>
-                    <td>Linda</td>
-                    <td>$1222.00</td>
-                    <td>1</td>
-                    <td>$1222.00</td>
-                    <td>
-                      <button class="btn btn-danger rounded-circle">
-                        <i class="fas fa-trash-alt"></i>
-                      </button>
-                    </td>
-                  </tr>
+                  
                 </tbody>
               </table>
               <div class="text-right">
-                <h6>Total : <span class="myspan">200$</span></h6>
-                <h6 style="margin-top: 2%;">Montant à payer : <span class="myspan">300$</span></h6>
-                <button style="margin-top: 1%;" class="btn valider">Valider</button>
+                <h6>Total : <span class="myspan">{{ total }}$</span></h6>
+                <!-- <h6 style="margin-top: 2%;">Montant à payer : <span class="myspan">300$</span></h6> -->
+                <button (click)="paiement()" style="margin-top: 1%;" class="btn valider">Valider</button>
               </div>
             </div>
           </div>

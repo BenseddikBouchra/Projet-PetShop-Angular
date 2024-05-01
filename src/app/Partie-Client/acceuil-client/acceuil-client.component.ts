@@ -4,8 +4,9 @@ import { pets } from 'src/app/Beans/petsBean';
 import { produits } from 'src/app/Beans/produitsBean';
 import { ProduitsService } from 'src/app/Services/produits.service';
 import { UserService } from 'src/app/Services/user.service';
-import { latestPet } from 'src/app/Beans/latestpet';
-import { latestproduct } from 'src/app/Beans/latestproduct';
+import { lastePetBean } from 'src/app/Beans/lastePetBean';
+import { lasteProductBean } from 'src/app/Beans/lasteProductBean';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-acceuil-client',
   templateUrl: './acceuil-client.component.html',
@@ -15,7 +16,8 @@ export class AcceuilClientComponent implements OnInit {
   constructor(
     private pets_service: PetsService,
     private produits_service: ProduitsService,
-    private users_service: UserService
+    private users_service: UserService,
+    private router: Router
   ) {}
 
   showButton: boolean = false; // Variable to control button visibility
@@ -26,9 +28,9 @@ export class AcceuilClientComponent implements OnInit {
   countDogs!: number;
   countProducts!: number;
   countUsers!: number;
-  latestChats!: latestPet[];
-  latestChiens!: latestPet[];
-  lastetProduct!: latestproduct[];
+  latestChats!: lastePetBean[];
+  latestChiens!: lastePetBean[];
+  lastetProduct!: lasteProductBean[];
   ngOnInit(): void {
     this.checkScrollPosition(); // Check scroll position initially
     this.getMostPopularPetChat(); // Get the most popular pet chat on page load
@@ -38,9 +40,9 @@ export class AcceuilClientComponent implements OnInit {
     this.getCountDog();
     this.getCountProducts();
     this.getCountUsers();
-    this.getLatestChats();
-    this.getLatestChiens();
-    this.getLatestProducts();
+    this.getLasteChats();
+    this.getLasteChiens();
+    this.getLasteProducts();
   }
 
   @HostListener('window:scroll', [])
@@ -129,8 +131,8 @@ export class AcceuilClientComponent implements OnInit {
     );
   }
 
-  getLatestChats(): void {
-    this.pets_service.latestChats().subscribe(
+  getLasteChats(): void {
+    this.pets_service.lasteChats().subscribe(
       (data) => {
         this.latestChats = data;
       },
@@ -139,8 +141,8 @@ export class AcceuilClientComponent implements OnInit {
       }
     );
   }
-  getLatestChiens(): void {
-    this.pets_service.latestChiens().subscribe(
+  getLasteChiens(): void {
+    this.pets_service.lasteChiens().subscribe(
       (data) => {
         this.latestChiens = data;
       },
@@ -149,8 +151,8 @@ export class AcceuilClientComponent implements OnInit {
       }
     );
   }
-  getLatestProducts(): void {
-    this.produits_service.getLatestProducts().subscribe(
+  getLasteProducts(): void {
+    this.produits_service.getlastetProducts().subscribe(
       (data) => {
         this.lastetProduct = data;
       },
@@ -159,8 +161,8 @@ export class AcceuilClientComponent implements OnInit {
       }
     );
   }
-  achter(id: string, categorie: string) {
-    console.log('id', id);
-    console.log('categorie', categorie);
+  acheter(idPetOrProduct: string, categorie: string): void {
+    // Redirection vers la route avec les paramètres id et categorie
+    this.router.navigate(['/client/details-achat-client', idPetOrProduct, categorie]);
   }
 }

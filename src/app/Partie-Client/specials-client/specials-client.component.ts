@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { specialpet } from 'src/app/Beans/specialpet';
+import { Router } from '@angular/router';
+import { specialPetBean } from 'src/app/Beans/specialPetBean';
 import { PetsService } from 'src/app/Services/pets.service';
 
 @Component({
@@ -8,9 +9,9 @@ import { PetsService } from 'src/app/Services/pets.service';
   styleUrls: ['./specials-client.component.css'],
 })
 export class SpecialsClientComponent implements OnInit {
-  constructor(private pet_service: PetsService) {}
-  specialchats!: specialpet[];
-  specialchiens!: specialpet[];
+  constructor(private pet_service: PetsService , private router:Router) {}
+  specialchats!: specialPetBean[];
+  specialchiens!: specialPetBean[];
 
   ngOnInit(): void {
     this.getSpecialCats();
@@ -37,8 +38,8 @@ export class SpecialsClientComponent implements OnInit {
       }
     );
   }
-  achter(id: string, categorie: string) {
-    console.log('id', id);
-    console.log('categorie', categorie);
+  acheter(idPetOrProduct: string, categorie: string): void {
+    // Redirection vers la route avec les paramètres id et categorie
+    this.router.navigate(['/client/details-achat-client', idPetOrProduct, categorie]);
   }
 }

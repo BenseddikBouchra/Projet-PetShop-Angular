@@ -16,25 +16,26 @@
           class="col-lg-3 col-md-6"
           data-aos="zoom-in"
           data-aos-delay="100"
-          *ngFor="let chiens of allChiens"
+          *ngFor="let chien of allChiens"
           style="margin-bottom: 2%"
         >
           <div class="box">
-            <span class="special" *ngIf="chiens.special">Special</span>
-            <span class="promotion" *ngIf="chiens.promotion">promotion</span>
-            <h3 style="color: #07d5c0">{{ chiens.categorie.nomCategorie }}</h3>
-            <div>{{ chiens.nomPet }}</div>
+            <span class="special" *ngIf="chien.special">Special</span>
+            <span class="promotion" *ngIf="chien.promotion">promotion</span>
+            <span id="new" *ngIf="lasteChiens.includes(chien.idPet.toString())">New</span>
+            <h3 style="color: #07d5c0">{{ chien.categorie.nomCategorie }}</h3>
+            <div>{{ chien.nomPet }}</div>
 
-            <div class="price"><sup>MAD</sup>{{ chiens.prixPet }}</div>
+            <div class="price"><sup>MAD</sup>{{ chien.prixPet }}</div>
             <img
-              [src]="'../../../assets/images/' + chiens.imagePet"
+              [src]="'../../../assets/images/' + chien.imagePet"
               class="img-fluid"
               alt=""
             />
-            <p>{{ chiens.descriptionPet }}</p>
+            <p>{{ chien.descriptionPet }}</p>
             <a
               (click)="
-                achter(chiens.idPet.toString(), chiens.categorie.nomCategorie)
+                acheter(chien.idPet.toString(), chien.categorie.nomCategorie)
               "
               style="cursor: pointer"
               class="btn-buy"
@@ -60,26 +61,28 @@
           class="col-lg-3 col-md-6"
           data-aos="zoom-in"
           data-aos-delay="100"
-          *ngFor="let chats of allChats"
+          *ngFor="let chat of allChats"
           style="margin-bottom: 2%"
         >
           <div class="box">
-            <span class="promotion" *ngIf="chats.promotion">promotion</span>
-            <span class="special" *ngIf="chats.special">Special</span>
-            <h3 style="color: #07d5c0">{{ chats.categorie.nomCategorie }}</h3>
-            <div>{{ chats.nomPet }}</div>
+            <span class="promotion" *ngIf="chat.promotion">promotion</span>
+            <span class="special" *ngIf="chat.special">Special</span>
+            <span id="new" *ngIf="lasteChats.includes(chat.idPet.toString())">New</span>
 
-            <div class="price"><sup>MAD</sup>{{ chats.prixPet }}</div>
+            <h3 style="color: #07d5c0">{{ chat.categorie.nomCategorie }}</h3>
+            <div>{{ chat.nomPet }}</div>
+
+            <div class="price"><sup>MAD</sup>{{ chat.prixPet }}</div>
             <img
-              [src]="'../../../assets/images/' + chats.imagePet"
+              [src]="'../../../assets/images/' + chat.imagePet"
               class="img-fluid"
               alt=""
               style="width: 80%"
             />
-            <p>{{ chats.descriptionPet }}</p>
+            <p>{{ chat.descriptionPet }}</p>
             <a
               (click)="
-                achter(chats.idPet.toString(), chats.categorie.nomCategorie)
+                acheter(chat.idPet.toString(), chat.categorie.nomCategorie)
               "
               class="btn-buy"
               style="cursor: pointer"
@@ -110,6 +113,8 @@
         >
           <div class="box">
             <span class="promotion" *ngIf="prod.promotion">promotion</span>
+            <span id="new" *ngIf="lastetProduct.includes(prod.idProduit.toString())">New</span>
+
             <h3 style="color: #07d5c0">{{ prod.categorie.nomCategorie }}</h3>
             <div>{{ prod.nomProduit }}</div>
             <div class="price"><sup>MAD</sup>{{ prod.prixProduit }}</div>
@@ -119,7 +124,12 @@
               alt=""
             />
             <p>{{ prod.descriptionProduit }}</p>
-            <a class="btn-buy"
+            <a
+              (click)="
+                acheter(prod.idProduit.toString(), prod.categorie.nomCategorie)
+              "
+              style="cursor: pointer"
+              class="btn-buy"
               >Acheter
               <i class="fa-solid fa-cart-shopping" style="color: #6381e6dd"></i
             ></a>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-menu-client',
@@ -7,12 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuClientComponent implements OnInit {
 
-  constructor() { }
+  constructor(public serviceUser:UserService , private router:Router) { }
 
 
   ngOnInit(): void {
 
     
+  }
+
+  logout(){
+    this.serviceUser.userAuthObject=null;
+    this.serviceUser.lienAchat=null;
+    this.router.navigate(['/client/sidentifier-client']); 
+  }
+
+  goToCard(){
+    this.serviceUser.lienAchat=null;
+    if(this.serviceUser.userAuthObject==null){
+      this.router.navigate(['/client/sidentifier-client']); 
+    }else{
+      this.router.navigate(['/client/card-client']); 
+    }
   }
 
 }

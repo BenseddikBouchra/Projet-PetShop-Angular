@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-sidentifier-client',
@@ -9,25 +11,41 @@ export class SidentifierClientComponent implements OnInit {
   email: boolean = false;
   password: boolean = false;
   Infos = {
-    email:'',
-    pass: '',
-}
+    userEmail:'',
+    userMotDePasse: '',
+  }
 
-  constructor() { }
+  constructor(private serviceUser:UserService , private route:Router) { }
 
   ngOnInit(): void {
+    if(this.serviceUser.userAuthObject!=null){
+      this.route.navigate(['/client/profile-client']); 
+    }
   }
   connecter() {
-    this.email = this.Infos.email === '';
-    this.password = this.Infos.pass === ''
+    this.email = this.Infos.userEmail === '';
+    this.password = this.Infos.userMotDePasse === ''
     if (this.email || this.password) {
-            alert('veuiller saisir tous les champs');
+        alert('veuiller saisir tous les champs');
 
       return;
     }
-    else {
-      alert('connexion reussie!')
-}
+    else {      
+      this.serviceUser.login(this.Infos).subscribe(
+        resp=>{
+          this.serviceUser.userAuthObject=resp   
+          if(this.serviceUser.lienAchat!=null){
+            this.route.navigate(['/client/details-achat-client'+this.serviceUser.lienAchat]); 
+
+            return
+          }       
+          this.route.navigate(['/client/profile-client']); 
+        },error=>{
+          console.error("compte inrouvable : ",error);
+        }
+      );
+            
+    }
   }
 
 }

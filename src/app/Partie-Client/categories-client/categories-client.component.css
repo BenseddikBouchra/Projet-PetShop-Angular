@@ -198,3 +198,15 @@ section {
   background: #ff0f0f;
   color: #fff;
 }
+#new {
+  width: 200px;
+  position: absolute;
+  top: 18px;
+  left: 100px;
+  transform: rotate(45deg);
+  z-index: 1;
+  font-size: 14px;
+  padding: 1px 0 3px 0;
+  background: #1bff0f;
+  color: #fff;
+}

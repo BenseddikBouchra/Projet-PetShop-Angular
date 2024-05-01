@@ -1,4 +1,4 @@
-export interface latestproduct {
+export interface lasteProductBean {
   idProduit: number;
   nomProduit: string;
   descriptionProduit: string;

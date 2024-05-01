@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { latestPet } from 'src/app/Beans/latestpet';
-import { latestproduct } from 'src/app/Beans/latestproduct';
-import { specialpet } from 'src/app/Beans/specialpet';
+import { Router } from '@angular/router';
+import { lastePetBean } from 'src/app/Beans/lastePetBean';
+import { lasteProductBean } from 'src/app/Beans/lasteProductBean';
+import { specialPetBean } from 'src/app/Beans/specialPetBean';
 import { PetsService } from 'src/app/Services/pets.service';
 import { ProduitsService } from 'src/app/Services/produits.service';
 
@@ -11,18 +12,28 @@ import { ProduitsService } from 'src/app/Services/produits.service';
   styleUrls: ['./categories-client.component.css'],
 })
 export class CategoriesClientComponent implements OnInit {
-  allChiens!: specialpet[];
-  allChats!: specialpet[];
-  allProduits!: latestproduct[];
+  allChiens!: specialPetBean[];
+  allChats!: specialPetBean[];
+  allProduits!: lasteProductBean[];
+
+  lasteChats: String[]=[];
+  lasteChiens: String[]=[];
+  lastetProduct: String[]=[];
+
   constructor(
     private pet_service: PetsService,
-    private prod_service: ProduitsService
+    private prod_service: ProduitsService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
     this.getAllChiens();
     this.getAllChats();
     this.getAllProduits();
+
+    this.getLasteChats();
+    this.getLasteChiens();
+    this.getLasteProducts();
   }
   getAllChiens(): void {
     this.pet_service.AllChiens().subscribe(
@@ -55,8 +66,45 @@ export class CategoriesClientComponent implements OnInit {
     );
   }
 
-  achter(id: string, categorie: string) {
-    console.log('id', id);
-    console.log('categorie', categorie);
+  getLasteChats(): void {
+    this.pet_service.lasteChats().subscribe(
+      (data) => {
+        // Extraire uniquement les IDs
+        this.lasteChats = data.map((chat) => chat.idPet.toString());
+      },
+      (error) => {
+        console.log('error', error);
+      }
+    );
+  }
+  
+  getLasteChiens(): void {
+    this.pet_service.lasteChiens().subscribe(
+      (data) => {
+        // Extraire uniquement les IDs
+        this.lasteChiens = data.map((chien) => chien.idPet.toString());
+      },
+      (error) => {
+        console.log('error', error);
+      }
+    );
+  }
+  
+  getLasteProducts(): void {
+    this.prod_service.getlastetProducts().subscribe(
+      (data) => {
+        // Extraire uniquement les IDs
+        this.lastetProduct = data.map((product) => product.idProduit.toString());
+      },
+      (error) => {
+        console.log('error', error);
+      }
+    );
+  }
+  
+
+  acheter(idPetOrProduct: string, categorie: string): void {
+    // Redirection vers la route avec les paramètres id et categorie
+    this.router.navigate(['/client/details-achat-client', idPetOrProduct, categorie]);
   }
 }

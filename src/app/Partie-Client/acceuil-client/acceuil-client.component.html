@@ -265,27 +265,27 @@
       >
         <div
           class="col-lg-4 col-md-6 portfolio-item filter-app"
-          *ngFor="let chats of latestChats"
+          *ngFor="let chat of latestChats"
           style="margin-bottom: 2%"
         >
           <div class="portfolio-wrap">
             <span id="new"><span id="spn">New</span></span>
             <img
-              [src]="'../../../assets/images/' + chats.imagePet"
+              [src]="'../../../assets/images/' + chat.imagePet"
               class="img-fluid"
               alt=""
             />
             <div class="portfolio-info">
-              <h4>{{ chats.categorie.nomCategorie }}</h4>
-              <p>{{ chats.nomPet }}</p>
+              <h4>{{ chat.categorie.nomCategorie }}</h4>
+              <p>{{ chat.nomPet }}</p>
               <br />
-              <p>{{ chats.descriptionPet }}</p>
+              <p>{{ chat.descriptionPet }}</p>
 
               <div class="portfolio-links">
                 <a
                   style="cursor: pointer"
                   (click)="
-                    achter(chats.idPet.toString(), chats.categorie.nomCategorie)
+                    acheter(chat.idPet.toString(), chat.categorie.nomCategorie)
                   "
                   data-gallery="portfolioGallery"
                   class="portfokio-lightbox"
@@ -305,29 +305,29 @@
 
         <div
           class="col-lg-4 col-md-6 portfolio-item filter-app"
-          *ngFor="let chiens of latestChiens"
+          *ngFor="let chien of latestChiens"
           style="margin-bottom: 2%"
         >
           <div class="portfolio-wrap">
             <span id="new"><span id="spn">New</span></span>
             <img
-              [src]="'../../../assets/images/' + chiens.imagePet"
+              [src]="'../../../assets/images/' + chien.imagePet"
               class="img-fluid"
               alt=""
             />
             <div class="portfolio-info">
-              <h4>{{ chiens.categorie.nomCategorie }}</h4>
-              <p>{{ chiens.nomPet }}</p>
+              <h4>{{ chien.categorie.nomCategorie }}</h4>
+              <p>{{ chien.nomPet }}</p>
               <br />
-              <p>{{ chiens.descriptionPet }}</p>
+              <p>{{ chien.descriptionPet }}</p>
 
               <div class="portfolio-links">
                 <a
                   style="cursor: pointer"
                   (click)="
-                    achter(
-                      chiens.idPet.toString(),
-                      chiens.categorie.nomCategorie
+                    acheter(
+                      chien.idPet.toString(),
+                      chien.categorie.nomCategorie
                     )
                   "
                   data-gallery="portfolioGallery"
@@ -347,29 +347,29 @@
         </div>
         <div
           class="col-lg-4 col-md-6 portfolio-item filter-app"
-          *ngFor="let prodcuts of lastetProduct"
+          *ngFor="let prodcut of lastetProduct"
           style="margin-bottom: 2%"
         >
           <div class="portfolio-wrap">
             <span id="new"><span id="spn">New</span></span>
             <img
-              [src]="'../../../assets/images/' + prodcuts.imageProduit"
+              [src]="'../../../assets/images/' + prodcut.imageProduit"
               class="img-fluid"
               alt=""
             />
             <div class="portfolio-info">
-              <h4>{{ prodcuts.categorie.nomCategorie }}</h4>
-              <p>{{ prodcuts.nomProduit }}</p>
+              <h4>{{ prodcut.categorie.nomCategorie }}</h4>
+              <p>{{ prodcut.nomProduit }}</p>
               <br />
-              <p>{{ prodcuts.descriptionProduit }}</p>
+              <p>{{ prodcut.descriptionProduit }}</p>
 
               <div class="portfolio-links">
                 <a
                   style="cursor: pointer"
                   (click)="
-                    achter(
-                      prodcuts.idProduit.toString(),
-                      prodcuts.categorie.nomCategorie
+                    acheter(
+                      prodcut.idProduit.toString(),
+                      prodcut.categorie.nomCategorie
                     )
                   "
                   data-gallery="portfolioGallery"
@@ -476,7 +476,7 @@
               {{ mostPopularChien.description }}
             </p>
             <a
-              (click)="achter(mostPopularChien.id, mostPopularChien.categorie)"
+              (click)="acheter(mostPopularChien.id, mostPopularChien.categorie)"
               class="btn-buy"
               >Acheter
               <i class="fa-solid fa-cart-shopping" style="color: #6381e6dd"></i
@@ -504,7 +504,7 @@
             </p>
             <a
               class="btn-buy"
-              (click)="achter(mostPopularChat.id, mostPopularChat.categorie)"
+              (click)="acheter(mostPopularChat.id, mostPopularChat.categorie)"
               >Acheter
               <i class="fa-solid fa-cart-shopping" style="color: #6381e6dd"></i
             ></a>
@@ -531,7 +531,7 @@
             <a
               class="btn-buy"
               (click)="
-                achter(mostPopularProduct.id, mostPopularProduct.category)
+                acheter(mostPopularProduct.id, mostPopularProduct.category)
               "
             >
               Acheter
